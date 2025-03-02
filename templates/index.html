@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Break Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/your-image.jpg') }}" alt="B-Break Art" class="card-image">
+        <div class="overlay-text">
+            <h1>Welcome to B-Break!!</h1>
+            <p>Let’s break the bias together! 💪</p>
+            <a href="/chat" class="start-btn">Start Chat</a>
+        </div>
+
+        
+    <!-- JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
