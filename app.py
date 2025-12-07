@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 app = Flask(__name__)
 
-# Configure Google Gemini API
-genai.configure(api_key="AIzaSyCRH8PUTFIQ7FRkYxWRbvojcQe3y42xD-4")
+api_key = os.getenv("GENAI_API_KEY")
+genai.configure(api_key=api_key)
 
 @app.route('/')
 def home():
@@ -65,4 +69,5 @@ B-Break:
         return jsonify({"response": "Oops! Something went wrong. Try again later."})
 
 if __name__ == '__main__':
+
     app.run(debug=True)
